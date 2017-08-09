@@ -1,7 +1,5 @@
-# LeMonde Discord Bot
-Discord bot for LeMonde Airlines.
-
-This bot is not designed to be used outside of the LeMonde Airlines Discord servers, and you probably shouldn't try to use it out of those servers.
+# Groupblox Bot
+Discord bot created for ROBLOX-related servers.
 
 Bot created by Ali365Dash. Suggestions and pull requests are always welcome.
 
