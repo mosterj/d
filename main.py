@@ -71,17 +71,15 @@ async def on_message(msg):
     owner = discord.utils.get(client.get_all_members(), id="252154198542647296")
     member = msg.author
     if msg.channel.is_private and msg.author != client.user:
+        if msg.content.lower().startswith('-'):
+            await client.send_message(msg.channel, "Commands must be used in a server.")
         await client.send_message(owner, "**New message sent to bot by " + msg.author.name + "#"+msg.author.discriminator + " ("+msg.author.id+"):** " + msg.content)
         if msg.attachments != []:
             for i in msg.attachments:
                 await client.send_message(owner, "**An attachment was also sent with the message, which is currently displayed:** " + i['url'])
-    if not msg.channel.is_private:
+    elif not msg.channel.is_private:
         if server.unavailable:
             return
-    elif msg.channel.is_private:
-        if msg.content.lower().startswith('-'):
-            await client.send_message(msg.channel, "Commands must be used in a server.")
-        return
     if msg.channel.name == 'verify' and not msg.author.bot:
         if msg.content.lower() == '-verify' and server.id in verify_server_ids:
             if member.server.id == '303128948785545216':
