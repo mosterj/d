@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "eris": "^0.7.0",
+    "requests": "^0.2.2",
     "roblox-js": "^4.0.1"
   }
 }
