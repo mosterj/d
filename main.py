@@ -63,7 +63,7 @@ async def on_ready():
     #     with os.scandir("data\\") as deer:
     #         ok i quit
 
-verify_server_ids = ['265962307299835905', '339344865978482689', '338238645792407563', '379360947740868608', '255156387997417472'] # LeMonde, Groupblox, RoCentral, FlyBristol
+verify_server_ids = ['383410524278226944'] # LeMonde, Groupblox, RoCentral, FlyBristol
 no_verify_logs = []
 
 @client.event
@@ -77,7 +77,7 @@ async def on_message(msg):
     server = msg.server
 
     # people
-    owner = discord.utils.get(client.get_all_members(), id="252154198542647296")
+    owner = discord.utils.get(client.get_all_members(), id="383410524278226944")
     member = msg.author
     if msg.channel.is_private and msg.author != client.user:
         if msg.content.lower().startswith('-'):
@@ -103,11 +103,11 @@ async def on_message(msg):
                 if output['status'] == 'ok':
                     verified = False
                     try:
-                        if msg.server.id == '255156387997417472':
+                        if msg.server.id == '383410524278226944':
                             user = robfbr.get_user(user_id=output['robloxId'])
                             group = robfbr.get_group(1110714)
                             if group in user.groups():
-                                await client.add_roles(member, discord.utils.get(member.server.roles, name="Passengers"))
+                                await client.add_roles(member, discord.utils.get(member.server.roles, name="Customers"))
                             else:
                                 await client.send_message(msg.channel, "Join the California Pacific Airlines group to join the Discord! https://www.roblox.com/groups/group.aspx?gid=1110714")
                             return
